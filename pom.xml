@@ -10,7 +10,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>de.ruedigermoeller</groupId>
     <artifactId>fst</artifactId>
-    <version>3.0.3-jdk20</version>
+    <version>3.0.4-jdk21</version>
     <packaging>bundle</packaging>
 
     <description>A fast java serialization drop in-replacement and some serialization based utils such as Structs and OffHeap Memory.</description>
@@ -47,8 +47,8 @@
                     <debuglevel>lines,vars,source</debuglevel> <!-- required to make structs work -->
                     <optimize>false</optimize>
                     <verbose>true</verbose>
-                    <source>20</source>
-                    <target>20</target>
+                    <source>21</source>
+                    <target>21</target>
                     <encoding>UTF-8</encoding>
                     <compilerArgs>
                         <arg>--enable-preview</arg>
@@ -86,7 +86,7 @@
                     <additionalJOptions>
                         <additionalJOption>--enable-preview</additionalJOption>
                         <additionalJOption>--release</additionalJOption>
-                        <additionalJOption>20</additionalJOption>
+                        <additionalJOption>21</additionalJOption>
                     </additionalJOptions>
                 </configuration>
                 <executions>

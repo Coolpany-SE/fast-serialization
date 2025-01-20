@@ -20,9 +20,6 @@ import java.lang.foreign.*;
 import org.nustaq.offheap.bytez.BasicBytez;
 import org.nustaq.offheap.bytez.Bytez;
 
-import java.lang.invoke.VarHandle;
-import java.nio.ByteOrder;
-
 /**
  * Date: 17.11.13
  * Time: 00:01
@@ -37,7 +34,9 @@ public class MemoryBytez implements Bytez {
     protected MemoryBytez() {}
 
     public MemoryBytez(long len) {
-        memseg = MemorySegment.allocateNative(len, SegmentScope.auto());
+        try (Arena arena = Arena.ofConfined()) {
+            memseg = arena.allocate(len);
+        }
     }
 
     public MemoryBytez(MemorySegment mem) {
